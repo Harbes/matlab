@@ -1,0 +1,912 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+%不显示日期
+\date{}
+
+%自动换行
+\XeTeXlinebreaklocale "zh" 
+\XeTeXlinebreakskip = 0pt plus 1pt
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "Songti SC"
+\font_sans "default" "STSong"
+\font_typewriter "default" "Kaiti SC"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5page%
+\topmargin 5pheight%
+\rightmargin 2.5page%
+\bottommargin 5pheight%
+\headheight 2.5pheight%
+\headsep 2.5pheight%
+\footskip 2.5pheight%
+\secnumdepth 3
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+托福考试官方指南
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+字体设置
+\end_layout
+
+\begin_layout Itemize
+Windows：
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+衬线字体：微软雅黑
+\end_layout
+
+\begin_layout Itemize
+无衬线字体：微软雅黑、楷体
+\end_layout
+
+\begin_layout Itemize
+等宽字体：微软雅黑、楷体、新宋体
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ubuntu：
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+衬线字体：Noto Sans CJK SC
+\end_layout
+
+\begin_layout Itemize
+无衬线字体：Noto Sans CJK SC
+\end_layout
+
+\begin_layout Itemize
+等宽字体：Noto Sans Mono CJK SC
+\end_layout
+
+\end_deeper
+\begin_layout Part
+Maximum Likelihood
+\end_layout
+
+\begin_layout Chapter
+the Maximum Likelihood Principle
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Itemize
+Maximum likelihood estimation requires that the following conditions are
+ satisfied:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+the 
+\color red
+form of the joint pdf
+\color inherit
+ of 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ is known;
+\end_layout
+
+\begin_layout Enumerate
+the specifications of the
+\color red
+ moments of the joint pdf
+\color inherit
+ are known;
+\end_layout
+
+\begin_layout Enumerate
+the joint pdf can be evaluated for all values of the parameters 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Applications
+\end_layout
+
+\begin_layout Itemize
+the discrete time version of Vasicek(1977) model of interest rates 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+.
+ The Vasicek model imposes absence of arbitrage on a system of interest
+ rates.
+ It begins with the dynamics of a short-maturity interest rate 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+, which are assumed to be first-order qutoregressive according to:
+\begin_inset Formula 
+\[
+r_{t}-r_{t-1}=\alpha+\beta r_{t-1}+u_{t},\quad u_{t}\sim iid.\,N(0,\sigma^{2})
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $\theta=\{\alpha,\beta,\sigma^{2}\}$
+\end_inset
+
+ are unknown parameters and 
+\begin_inset Formula $\beta<0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Stationary Distribution of the Vasicek Model
+\end_layout
+
+\begin_layout Itemize
+unconditional moment:
+\begin_inset Formula 
+\begin{align*}
+\mu_{S} & =-\frac{\alpha}{\beta}\\
+\sigma_{S}^{2} & =\frac{\sigma^{2}}{1-\rho^{2}}=-\frac{\sigma^{2}}{\beta(2+\beta)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the log-likelihood function based on the stationary distribution in equation
+ for a sample of 
+\begin_inset Formula $T$
+\end_inset
+
+ observations is:
+\begin_inset Formula 
+\[
+lnL_{T}(\theta)=-\frac{1}{2}[ln2\pi+ln\sigma_{S}^{2}+\frac{1}{\sigma_{S}^{2}T}\sum_{t=1}^{T}(r_{t}-\mu_{S})^{2}]
+\]
+
+\end_inset
+
+Maximising 
+\begin_inset Formula $lnL_{T}(\theta)$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\theta$
+\end_inset
+
+ gives 
+\begin_inset Formula 
+\begin{align*}
+\widehat{\mu_{S}} & =\frac{1}{T}\sum_{t=1}^{T}r_{t}\\
+\widehat{\sigma_{S}^{2}} & =\frac{1}{T}\sum_{t=1}^{T}(r_{t}-\widehat{\mu_{S}})^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Transitional Distribution of the Vasiced Model
+\end_layout
+
+\begin_layout Itemize
+In contrast to the stationary model specification of the previous section,
+ the full dynamics of the Vasicek model are now used by specifying the trasition
+al distribution:
+\begin_inset Formula 
+\[
+f(r_{t}|r_{t-1};\alpha,\rho,\sigma^{2})=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp[-\frac{(r_{t}-\alpha-\rho r_{t-1})^{2}}{2\sigma^{2}}]
+\]
+
+\end_inset
+
+the log-likelihood function based on the trasitional distribution is :
+\begin_inset Formula 
+\[
+lnL_{T}(\theta)=-\frac{1}{2}[ln2\pi+ln\sigma^{2}+\frac{1}{\sigma^{2}(T-1)}\sum_{t=2}^{T}(r_{t}-\alpha-\rho r_{t-1})^{2}]
+\]
+
+\end_inset
+
+the first derivatives of the log-likelihood function are:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial lnL_{T}(\theta)}{\partial\alpha} & =\frac{1}{\sigma^{2}(T-1)}\sum_{t=2}^{T}(r_{t}-\alpha-\rho r_{t-1})\\
+\frac{\partial lnL_{T}(\theta)}{\partial\rho} & =\frac{1}{\sigma^{2}(T-1)}\sum_{t=2}^{T}(r_{t}-\alpha-\rho r_{t-1})r_{t-1}\\
+\frac{\partial lnL_{T}(\theta)}{\partial(\sigma^{2})} & =-\frac{1}{2\sigma^{2}}+\frac{1}{2\sigma^{4}(T-1)}\sum_{t=2}^{T}(r_{t}-\alpha-\rho r_{t-1})^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercises
+\end_layout
+
+\begin_layout Subsection
+sampling data
+\end_layout
+
+\begin_layout Itemize
+Time invariant model; Count model; Linear regression model; Exponential
+ regression model; Autoregression model; Bilinear time series model; Autoregress
+ive model with heteroskedasticity; the ARCH regression model.
+\end_layout
+
+\begin_layout Chapter
+Properties of Maximum Likelihood Estimators
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Itemize
+In large samples, the maximum likelihood estimator is consistent, efficient
+ and normally distributed; In small samples, it satisfies an invariance
+ property, is a function of sufficient statistics and in some, but nor all,
+ cases, is unbiased and unique.
+\end_layout
+
+\begin_layout Itemize
+Strict sationary does not require the existence of the first two moments
+ of the joint distribution of 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Martingale Difference Seqence: a martingale difference sequence(mds) is
+ defined in terms of its first conditional moment having the property
+\begin_inset Formula 
+\[
+E_{t-1}[y_{t}]=0[=E[y_{t}|y_{t-1},y_{t-2},...]]
+\]
+
+\end_inset
+
+this condition shows that information at time 
+\begin_inset Formula $t-1$
+\end_inset
+
+ cannot be used to forecast 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+.
+ Two important properties of a mds arising from the above equation are
+\begin_inset Formula 
+\[
+Properties\,1:\quad E[y_{t}]=E[E_{t-1}[y_{t}]]=E[0]=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Properties\,2:\quad E[E_{t-1}[y_{t}y_{t-k}]]=E[y_{t-k}E_{t-1}[y_{t}]]=0,\quad k>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+mixing process: condsider two subperiods of a time series 
+\begin_inset Formula $s$
+\end_inset
+
+ periods apart
+\begin_inset Formula 
+\[
+...,y_{t-2},y_{t-1},y_{t},y_{t+1},y_{t+2},...,y_{t+s-1},y_{t+s},y_{t+s+1},...
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $Y_{t}^{s}\equiv\{y_{t},y_{t+1},...,y_{s}\}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula 
+\[
+cov[g(Y_{-\infty}^{t}),h(Y_{t+s}^{+\infty})]\rightarrow0\:as\:s\rightarrow\infty
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $g()$
+\end_inset
+
+ and 
+\begin_inset Formula $h()$
+\end_inset
+
+ are arbitrary functions, then as 
+\begin_inset Formula $Y_{-\infty}^{t}$
+\end_inset
+
+and 
+\begin_inset Formula $Y_{t+s}^{\infty}$
+\end_inset
+
+become more widely seperated in time, they behave like independent sets
+ of random variables.
+ A process satisfying the above condition is known as mixing(technically
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-mixing or strong mixing).
+ For example, an 
+\begin_inset Formula $iid$
+\end_inset
+
+ process is mixing because all the covariances are zero and the mixing condition
+ is satisfied trivially.
+\end_layout
+
+\begin_layout Itemize
+Regularity conditions
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Existence: the expectation 
+\begin_inset Formula 
+\[
+E[lnf(y_{t};\theta)]=\int_{-\infty}^{\infty}lnf(y_{t};\theta)f(y_{t};\theta)dy_{t}
+\]
+
+\end_inset
+
+exists.【a statement of the existence of the population log-likelihood function】
+\end_layout
+
+\begin_layout Enumerate
+Convergence: the log-likelihood function converges in probability to its
+ expectation
+\begin_inset Formula 
+\[
+lnL_{T}(\theta)=\frac{1}{T}\sum_{t=1}^{T}lnf(y_{t};\theta)\stackrel{p}{\rightarrow}E[lnf(y_{t};\theta)]
+\]
+
+\end_inset
+
+uniformly in 
+\begin_inset Formula $\theta$
+\end_inset
+
+.【a statement of how the sample log-likelihood function converges to the
+ population value by virtue of the WLLN, provided that this expectation
+ exists in the first place, as given by the existence condition】
+\end_layout
+
+\begin_layout Enumerate
+Continuity: the likelihood function 
+\begin_inset Formula $lnL_{T}(\theta)$
+\end_inset
+
+ is continuous in 
+\begin_inset Formula $\theta$
+\end_inset
+
+.【a necessary condition for the differentiability condition】
+\end_layout
+
+\begin_layout Enumerate
+Differentiability: the log-likelihood function 
+\begin_inset Formula $lnL_{T}(\theta)$
+\end_inset
+
+ is at least twice continuously differentiable in an open interval around
+ 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Interchangeability: the order of differentiation and integration of 
+\begin_inset Formula $lnL_{T}(\theta)$
+\end_inset
+
+ is interchangeable.【used in the derivation of many of the propertiess of
+ the maximum likelihood estimator.】
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Applications
+\end_layout
+
+\begin_layout Itemize
+Some of the key results from this chapter are now applied to the bivariate
+ normal distribution.
+ Let 
+\begin_inset Formula $y_{1,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{2,t}$
+\end_inset
+
+ be jointly 
+\begin_inset Formula $iid$
+\end_inset
+
+ random variables with means 
+\begin_inset Formula $\mu_{i}=E[y_{i}]$
+\end_inset
+
+, variances 
+\begin_inset Formula $\sigma_{i}^{2}=E[(y_{i,t}-\mu_{i})^{2}]$
+\end_inset
+
+, covariance 
+\begin_inset Formula $\sigma_{1,2}=E[(y_{1,t}-\mu_{1})(y_{2,t}-\mu_{2})]$
+\end_inset
+
+ and correlation 
+\begin_inset Formula $\rho=\frac{\sigma_{1,2}}{\sigma_{1}\sigma_{2}}$
+\end_inset
+
+.
+ The bivariate normal distribution is 
+\begin_inset Formula 
+\[
+f(y_{1,t},y_{2,t};\theta)=\frac{1}{2\pi\sqrt{\sigma_{1}^{2}\sigma_{2}^{2}(1-\rho^{2})}}exp\{-\frac{1}{2(1-\rho^{2})}[(\frac{y_{1,t}-\mu_{1}}{\sigma_{1}})^{2}-2\rho(\frac{y_{1,t}-\mu_{1}}{\sigma_{1}})(\frac{y_{2,t}-\mu_{2}}{\sigma_{2}})+(\frac{y_{2,t}-\mu_{2}}{\sigma_{2}})^{2}]\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+portfolio diversification
+\end_layout
+
+\begin_layout Itemize
+a common assumption underlying portfolio diversification models is that
+ returns are normally distributed.
+ In the case of two assets, the returns 
+\begin_inset Formula $y_{1,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{2,t}$
+\end_inset
+
+ are assumed to be 
+\begin_inset Formula $iid$
+\end_inset
+
+ with the bivariate normal distribution.
+ The log-likelihood function is 
+\begin_inset Formula 
+\[
+lnL_{T}(\theta)=-ln2\pi-\frac{1}{2}(ln\sigma_{1}^{2}+ln\sigma_{2}^{2}+ln(1-\rho^{2}))-\frac{1}{2(1-\rho^{2})T}\sum_{t=1}^{T}(z_{1,t}^{2}-2\rho z_{1,t}z_{2,t}+z_{2,t}^{2})
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula 
+\[
+z_{i,t}=\frac{y_{i,t}-\mu_{i}}{\sigma_{i}},\quad i=1,2
+\]
+
+\end_inset
+
+the first-order derivatives of the log-likelihood function are
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial lnL_{T}(\theta)}{\partial\mu_{i}} & =\frac{1}{\sigma_{i}(1-\rho^{2})}\frac{1}{T}\sum_{t=1}^{T}(z_{i,t}-\rho z_{j,t})\\
+\frac{\partial lnL_{T}(\theta)}{\partial\sigma_{i}^{2}} & =-\frac{1}{2\sigma_{i}^{2}(1-\rho^{2})}[(1-\rho^{2})-\frac{1}{T}\sum_{t=1}^{T}z_{i,t}^{2}+\frac{\rho}{T}\sum_{t=1}^{T}z_{i,t}z_{j,t}]\\
+\frac{\partial lnL_{T}(\theta)}{\partial\rho} & =\frac{\rho}{1-\rho^{2}}-\frac{1}{(1-\rho^{2})^{2}}\frac{1}{T}\sum_{t=1}^{T}(\rho z_{1,t}^{2}+\rho z_{2,t}^{2}+\frac{1+\rho^{2}}{(1-\rho^{2})^{2}}z_{1,t}z_{2,t})
+\end{align*}
+
+\end_inset
+
+Setting these derivatives to zeros and rearranging yields the maximum likelihood
+ estimators
+\begin_inset Formula 
+\begin{align*}
+\widehat{\mu_{i}} & =\frac{1}{T}\sum y_{i,t}\\
+\widehat{\sigma_{i}^{2}} & =\frac{1}{T}\sum(y_{i,t}-\widehat{\mu_{i}})^{2}\\
+\widehat{\rho} & =\frac{1}{T\widehat{\sigma_{1}}\widehat{\sigma_{2}}}\sum(y_{1,t}-\widehat{\mu_{1}})(y_{2,t}-\widehat{\mu_{2}})
+\end{align*}
+
+\end_inset
+
+To demonstrate the potential advantages of portfolio diversification, define
+ the return on the portfolio of the two assets as 
+\begin_inset Formula 
+\[
+r_{t}=w_{1}y_{1,t}+(1-w_{1})y_{2,t}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sigma^{2}=w_{1}^{2}\sigma_{1}^{2}+(1-w_{1})^{2}\sigma_{2}^{2}+2w_{1}(1-w_{1})\sigma_{1,2}
+\]
+
+\end_inset
+
+the optimal weight on asset 1 is 
+\begin_inset Formula 
+\[
+w_{1}=\frac{\sigma_{2}^{2}-\sigma_{1,2}}{\sigma_{1}^{2}+\sigma_{2}^{2}-2\sigma_{1,2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Bimodal Likelihood
+\end_layout
+
+\begin_layout Itemize
+Consider the bivariate normal distribution with 
+\begin_inset Formula $\mu_{1}=\mu_{2}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{1}^{2}=\sigma_{2}^{2}=1$
+\end_inset
+
+ and in which 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the only unknown parameter.
+ The gradient is 
+\begin_inset Formula 
+\[
+\frac{\partial lnL_{T}(\theta)}{\partial\rho}=\frac{\rho}{1-\rho^{2}}+\frac{1}{T(1-\rho^{2})}\sum_{t=1}^{T}y_{1,t}y_{2,t}-\frac{\rho}{T(1-\rho^{2})^{2}}\sum_{t=1}^{T}(y_{1,t}^{2}-2\rho y_{1,t}y_{2,t}+y_{2,t}^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Numerical Estimation Methods
+\end_layout
+
+\begin_layout Chapter
+Hypothesis Testing
+\end_layout
+
+\begin_layout Itemize
+the likelihood ratio test(LR), the Wald test and the Lagrange multiplier
+ test(LM) are three general procedures used in developing statistics to
+ test hypothesis in a likelihood framework.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the likelihood ratio test is based on the distance between 
+\begin_inset Formula $lnL_{T}(\widehat{\theta})$
+\end_inset
+
+ and 
+\begin_inset Formula $lnL_{T}(\theta_{0})$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+LR=-2T(lnL_{T}(\theta_{0})-lnL_{T}(\widehat{\theta}))\rightarrow\chi_{M}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the Wald test is based on the distance between 
+\begin_inset Formula $\widehat{\theta}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+W=(\widehat{\theta}-\theta_{0})'[cov(\widehat{\theta}-\theta_{0})]^{-1}(\widehat{\theta}-\theta_{0})\rightarrow\chi_{M}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the Lagrange multiplier test is based on the distance between 
+\begin_inset Formula $G_{T}(\widehat{\theta})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{T}(\theta_{0})$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+LM & =(G_{T}(\theta_{0})-G_{T}(\widehat{\theta}))'[cov(G_{T}(\theta_{0})-G_{T}(\widehat{\theta}))]^{-1}(G_{T}(\theta_{0})-G_{T}(\widehat{\theta}))\\
+ & =G_{T}'(\theta_{0})[cov(G_{T}(\theta_{0}))]^{-1}G_{T}(\theta_{0})\\
+ & =TG_{T}'(\theta_{0})I^{-1}(\theta_{0})G_{T}(\theta_{0})\rightarrow\chi_{M}^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+事实上，三者之间是渐进等价的。（see page136 “Asymptotic Relationships Among the Tests”）
+\end_layout
+
+\begin_layout Itemize
+Finite Sample Relationships: when testing linear restrictions of the coefficient
+ in a normal linear regression model, the three test statistics satisfy
+ the finite sample inequalities
+\begin_inset Formula 
+\[
+W\geq LR\geq LM
+\]
+
+\end_inset
+
+this results implies that the LM test tends to be a more conservative test
+ in finite samples because the Wald statistic tends to reject the null hypothesi
+s more frequently than the LR statistic,
+\end_layout
+
+\begin_layout Itemize
+size and power.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+size is the level of significance: 
+\begin_inset Formula $size=\alpha$
+\end_inset
+
+, type-1 error;
+\end_layout
+
+\begin_layout Enumerate
+power is the difference of 1 and prob of type-2 error, a test having the
+ following property is known as a consistent test:
+\begin_inset Formula 
+\[
+\underset{T\rightarrow\infty}{lim}P(W\in\omega|H_{1})=1
+\]
+
+\end_inset
+
+即我们希望接受错误原假设的概率越小约好。
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Applications
+\end_layout
+
+\begin_layout Itemize
+Exponential Regression model
+\end_layout
+
+\begin_layout Itemize
+Gamma Regression model
+\end_layout
+
+\begin_layout Part
+Regression models
+\end_layout
+
+\begin_layout Chapter
+Linear Regression models
+\end_layout
+
+\begin_layout Chapter
+Nonlinear Regression Models
+\end_layout
+
+\begin_layout Chapter
+Autocorrelated Regression Models
+\end_layout
+
+\begin_layout Chapter
+Heteroskedastic Regression Models
+\end_layout
+
+\begin_layout Part
+Other Estimation Methods
+\end_layout
+
+\begin_layout Chapter
+Quasi-Maximum Likelihood Estimation
+\end_layout
+
+\begin_layout Chapter
+Generalized Method of Moments
+\end_layout
+
+\begin_layout Chapter
+Nonparametric Estimation
+\end_layout
+
+\begin_layout Chapter
+Estimation by Simulation
+\end_layout
+
+\begin_layout Part
+Stationary Time Series
+\end_layout
+
+\begin_layout Chapter
+Linear Time Series Models
+\end_layout
+
+\begin_layout Chapter
+Structural Vector Autoregression
+\end_layout
+
+\begin_layout Chapter
+Latent Factor models
+\end_layout
+
+\begin_layout Part
+Nonstationary Time Series
+\end_layout
+
+\begin_layout Chapter
+Nonstationary Distribution Theory
+\end_layout
+
+\begin_layout Chapter
+Unit Root Testing
+\end_layout
+
+\begin_layout Chapter
+Cointegration
+\end_layout
+
+\begin_layout Part
+Nonlinear Time Series
+\end_layout
+
+\begin_layout Chapter
+Nonlinearities in Mean
+\end_layout
+
+\begin_layout Chapter
+Nonlinearities in Variance
+\end_layout
+
+\begin_layout Chapter
+Discrete Time Series Models
+\end_layout
+
+\end_body
+\end_document

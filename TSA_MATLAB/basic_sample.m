@@ -24,7 +24,7 @@ clear all;
 clc;
 
 % Set seed of random number generator
-RandStream.setDefaultStream( RandStream('mt19937ar','seed',1234567) )
+%RandStream.setDefaultStream( RandStream('mt19937ar','seed',1234567) )
 
 t = 5;       
 
